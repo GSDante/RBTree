@@ -19,6 +19,10 @@ public:
 	RBTree();
 	void rotateLeft(Node *&);
 	void rotateRight(Node *&);
-	
+	Node* findMin(Node* node){
+	void fixDeleteRBTree(Node *&node) {
+	Node * deleteBST(Node *&node, int data){
+	void deleteRB(int data){
+
 };
 #endif
