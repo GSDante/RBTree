@@ -1,30 +1,30 @@
 #include <iostream>
 
-Node(int data) {
+Node::Node(int data) {
     this->data = data;
     color = RED;
     left = right = parent = nullptr;
 }
 
-RBTree() {
+RBTree::RBTree() {
     root = nullptr;
 }
 
-int getColor(Node *&node) {
+int RBTree::getColor(Node *&node) {
     if (node == nullptr)
         return BLACK;
 
     return node->color;
 }
 
-void setColor(Node *&node, int color) {
+void RBTree::setColor(Node *&node, int color) {
     if (node == nullptr)
         return;
 
     node->color = color;
 }
 
-void rotateLeft(Node *&ptr){
+void RBTree::rotateLeft(Node *&ptr){
 	// Criação do nó do filho direito tendo em vista que será
 	// o filho direito do nó desbalanceado que irá ser o novo pai
 	Node *child_right = ptr->right;
@@ -51,7 +51,7 @@ void rotateLeft(Node *&ptr){
 	ptr->parent = child_right;
 }
 
-void rotateRight(Node *&ptr){
+void RBTree::rotateRight(Node *&ptr){
 	Node * child_left = ptr->left;
 	ptr->left = child_left->right;
 
